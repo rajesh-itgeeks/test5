@@ -132,7 +132,7 @@ function FAQPage({ globalData }) {
 						</p>
 						{generalFAQs.map((faq, index) => {
 							return (
-								<div className={style.faqBox}>
+								<div className={style.faqBox} key={index}>
 									<FAQ
 										question={faq.question}
 										answer={faq.answer}
@@ -145,7 +145,7 @@ function FAQPage({ globalData }) {
 						<p className='faqTitle'>Additional Questions</p>
 						{additionalFAQs.map((faq, index) => {
 							return (
-								<div className={style.faqBox}>
+								<div className={style.faqBox} key={index}>
 									<FAQ
 										question={faq.question}
 										answer={faq.answer}

@@ -42,7 +42,6 @@ function TitleImageTextSection({ data }) {
                     src={mainImage}
                     fill
                     className={style.image}
-                    alt=""
                     aria-hidden="true"
                   />
                 </Tween>

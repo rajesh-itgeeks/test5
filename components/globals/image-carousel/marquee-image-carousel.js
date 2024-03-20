@@ -23,7 +23,7 @@ function MarqueeImageCarousel({ data }) {
           {data.images.map((slide, index) => {
             return (
               <SwiperSlide key={index} className={style.card}>
-                <Image src={slide.mediaItemUrl} alt={slide.altText} fill alt={slide?.title} />
+                <Image src={slide.mediaItemUrl} alt={slide.altText} fill/>
               </SwiperSlide>
             );
           })}
@@ -49,7 +49,7 @@ function MarqueeImageCarousel({ data }) {
           {data.images.map((slide, index) => {
             return (
               <SwiperSlide key={index} className={style.card}>
-                <Image src={slide.mediaItemUrl} alt={slide.altText} fill alt={slide?.title} />
+                <Image src={slide.mediaItemUrl} alt={slide.altText} fill/>
               </SwiperSlide>
             );
           })}

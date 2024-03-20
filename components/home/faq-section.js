@@ -25,7 +25,7 @@ const FAQSection = () => {
   const faqsData = useMemo(() => {
     return faqs.map((faq, index) => {
       return (
-        <div className={style.faqBox}>
+        <div className={style.faqBox} key={index}>
           <FAQ
             question={faq.q}
             answer={faq.ans}

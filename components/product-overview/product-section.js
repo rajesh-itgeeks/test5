@@ -18,7 +18,7 @@ function ProductSection({ data, category, forwardedRef, noImagePadding = false, 
               prod?.collections?.nodes.map((prodCollection, index) => {
                 if (prodCollection.handle === category) {
                   return (
-                    <div className={s.cardContainer}>
+                    <div className={s.cardContainer} key={index}>
                       <ProductCard
                         key={prod?.handle + prodCollection?.handle + index}
                         data={prod}
