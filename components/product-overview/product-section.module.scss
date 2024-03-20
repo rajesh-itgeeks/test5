@@ -1,0 +1,31 @@
+section.productSection {
+  .container {
+    padding: 2vw 5vw 7vw 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 2rem;
+    @media (max-width: 1000px) and (min-width: 770px) {
+      .cardContainer {
+        max-width: 40%;
+      }
+    }
+    @media (max-width: 770px) and (min-width: 750px) {
+      .cardContainer {
+        margin-top: 2rem;
+        max-width: 45%;
+      }
+    }
+    @media (max-width: 750px) {
+      .cardContainer {
+        margin-top: 2rem;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &.darkMode {
+    background-color: $black;
+  }
+}

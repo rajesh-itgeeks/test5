@@ -1,0 +1,231 @@
+section.textScrollAnimation {
+	background: #242426;
+	padding: 10vw 0px 80px;
+	@media (max-width: 800px) {
+		padding-top: 3rem;
+	}
+	.container {
+		position: relative;
+		height: auto;
+		padding: 0 80px 5rem;
+
+		@media (max-width: 800px) {
+			padding: 0;
+		}
+
+		@media (min-width: $md) {
+			padding: 0 80px 10vw;
+		}
+
+		.mobileContain {
+			display: block;
+
+			@media (min-width: $md) {
+				display: none;
+			}
+		}
+
+		.desktopContain {
+
+			@media (max-width: 800px) {
+				padding: 1.5rem;
+			}
+		}
+
+		.pinParent {
+			position: relative;
+			width: 100%;
+			z-index: 2;
+
+			@media (min-width: $md) {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.innerPin {
+				text-align: center;
+				margin-top: -5vw;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+
+				.leadin {
+					margin: 0 0 2rem 0;
+					color: $white;
+
+					@media (max-width: 800px) {
+						white-space: nowrap;
+						font-size: 1.25rem;
+					}
+				}
+
+				.mainTitle {
+					text-align: center;
+					color: $white;
+					width: 70rem;
+
+					@media (max-width: 800px) {
+						font-size: 2rem;
+						width: 90vw;
+						line-height: 120%;
+					}
+
+					small {
+						overflow-y: hidden;
+						line-height: 1;
+					}
+
+					span {
+						transform-origin: center bottom;
+					}
+
+					strong {
+						span {
+							font-weight: bold;
+							font-style: italic;
+						}
+					}
+
+					span {
+						display: inline-block;
+						vertical-align: top;
+
+						svg,
+						.extraSpin {
+							width: 3.7rem;
+							height: 3.7rem;
+							@media (max-width: 1000px) and (min-width: 750px) {
+								width: 5rem;
+								height: 5rem;
+								margin-top: -4px;
+							}
+							@media (min-width: $md) {
+								margin-top: -8px;
+								width: 6rem;
+								height: 6rem;
+							}
+
+							@media (max-width: 800px) {
+								width: 2.5rem;
+								height: 2rem;
+								margin-top: -0.5rem;
+							}
+						}
+
+						.extraSpin {
+							margin: 0 -0.25rem;
+
+							@media (min-width: $md) {
+								margin: 0 0rem;
+							}
+						}
+
+						svg {
+							path {
+								fill: $white;
+								stroke: $white;
+							}
+						}
+					}
+				}
+
+				.bodyText {
+					color: $white;
+					width: 80rem;
+						font-size: 1.9rem;
+
+					@media (max-width: 800px) {
+						width: 90vw;
+						font-size: 0.85rem;
+						margin-top: 0.5rem;
+					}
+				}
+			}
+		}
+
+		.textContain {
+			width: 100%;
+			max-width: 100%;
+			padding: 0 $gutter-m-sm;
+			margin: 2.5rem 0 0;
+			text-align: center;
+
+			@media (min-width: $md) {
+				text-align: left;
+				margin: 0;
+				padding: 0;
+				max-width: 20%;
+				@include absolute(auto, 20vw, 3rem, auto);
+			}
+
+			.ctaContain {
+				text-align: center;
+				margin: 2rem 0 0;
+
+				@media (min-width: $md) {
+					text-align: left;
+				}
+			}
+		}
+
+		.asterick {
+			position: absolute;
+			left: 0;
+			top: -120px;
+
+			@media (max-width: 800px) {
+				display: none;
+			}
+		}
+	}
+
+	.badgesContainer {
+		padding: 0px 80px;
+		@media (max-width: 800px) {
+			padding: 0px 40px;
+			margin-top: -7rem;
+		}
+
+		.valuePropBadges {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			width: 100%;
+			border-top: 2px solid #4a4a4a;
+			margin-top: 100px;
+			padding: 56px 0;
+			@media (max-width: 800px) {
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+			@media (max-width: 500px) {
+				.badgeContain {
+					width: 40%;
+					display: flex;
+					justify-content: center;
+				}
+			}
+			.badgeContain {
+				display: flex;
+				align-items: center;
+
+				@media (min-width: $md) {
+					// max-width: 25%;
+					// padding: 0 2rem 0 0;
+				}
+		
+				img {
+					display: block;
+					width: 12.5rem;
+					height: 12.5rem;
+					@media (max-width: 800px) {
+						width: 6.25rem;
+						height: 6.25rem;
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+:global(.btn) {
+  &.btnTransparent {
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &.btnBordered {
+    border: 2px solid $white;
+  }
+}

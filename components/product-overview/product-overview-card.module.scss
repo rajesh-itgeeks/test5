@@ -1,0 +1,278 @@
+div.productCard {
+	width: 100%;
+	max-width: 100%;
+	@media (max-width: 1000px) and (min-width: 750px) {
+		width: 90%;
+	}
+	@media (min-width: $md) {
+		width: 32rem;
+		height: 700px;
+		// margin-right: 8.75%;
+		// border: 1px solid white;
+	}
+
+
+
+	&:nth-child(3n) {
+		margin-right: 0%;
+	}
+
+	section {
+		display: block;
+		text-decoration: none;
+		color: $black;
+
+		.imgContain {
+			overflow: hidden;
+			// border: 2px solid $black;
+			border-radius: 20px;
+			transition: $tr-med;
+			min-height: 25vw;
+		@media (max-width: 800px) {
+			}
+			img.productImg {
+				border-radius: 20px;
+				position: static !important;
+				max-width: 100%;
+				margin: 0 auto;
+				display: block;
+				object-fit: contain;
+				transition: $tr-med;
+				transform: scale(1);
+				padding: 2rem 8rem;
+
+				@media (min-width: $t) {}
+
+				@media (min-width: $dt) {
+					padding: 5rem 10rem;
+				}
+			}
+		}
+
+		.productInfo {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: ease-in 0.2s;
+			// margin: 2.5rem 0;
+			// padding: 1.25rem 3.25rem 1.25rem 0;
+			// border-top: 2px solid $black;
+			// border-bottom: 2px solid $black;
+			a {
+				text-decoration: none;
+			}
+			svg {
+				@include absolute(1rem, 0, auto, auto);
+				overflow: visible;
+				transition: $tr-med;
+				transform: rotate(-90deg);
+
+				path {
+					fill: $black;
+					transition: $tr-med;
+				}
+
+				circle {
+					fill: $white;
+					stroke: $black;
+					transition: $tr-med;
+				}
+			}
+
+			.productTitle {
+				color: $white;
+				margin: 0 0 1rem;
+				font-weight: 500;
+			}
+
+			.productCost {
+				color: $white;
+			}
+
+			.productDesc {
+				display: none;
+				text-align: center;
+				@media (min-width: 750px) and (max-width: 1000px) {
+					margin-top: 1rem;
+				}
+				@media (max-width: 800px) {
+					text-align: center;
+				}
+			}
+
+			.formBtn {
+				margin: 1rem 0 0;
+				display: none;
+				appearance: none;
+				outline: 0;
+				padding: 1rem 2.5rem;
+				margin-bottom: 1rem;
+				border: 1px solid $white;
+				width: auto;
+				color: $white;
+				background: transparent;
+
+				span {
+					position: relative;
+				}
+
+				&:hover {
+					border: 1px solid $white !important;
+					color: $black;
+					background: $white;
+				}
+			
+				@media  (min-width: 500px) and (max-width: 1200px) {
+					border: 1px solid $white !important;
+					color: $black;
+					background: $white;
+				}
+				@media (max-width: 500px) {
+					border: 1px solid $white;
+					color: $white;
+					background: transparent ;
+				}
+			}
+		}
+
+		&:hover {
+			.imgContain {
+				// background-color: $black;
+
+				img.productImg {
+					transform: scale(0.7);
+					@media (max-width: 800px) {
+					margin-top: -2rem;
+				}
+				}
+			}
+
+			.productInfo {
+				margin-top: -5rem;
+				transition: ease-in 0.2s;
+				@media (max-width: 800px) {
+					margin-top: -2rem;
+				}
+
+				svg {
+					transform: rotate(0deg);
+
+					path {
+						fill: $white;
+					}
+
+					circle {
+						fill: $black;
+					}
+				}
+
+				.productDesc {
+					display: block;
+					color: $white;
+				}
+
+				.formBtn {
+					display: block;
+				}
+			}
+		}
+		@media (max-width: 1000px) {
+			.imgContain {
+				// background-color: $black;
+
+				img.productImg {
+					transform: scale(0.7);
+					@media (max-width: 800px) {
+					margin-top: -2rem;
+				}
+				}
+			}
+
+			.productInfo {
+				margin-top: -5rem;
+				transition: ease-in 0.2s;
+				@media (max-width: 800px) {
+					margin-top: -2rem;
+				}
+
+				svg {
+					transform: rotate(0deg);
+
+					path {
+						fill: $white;
+					}
+
+					circle {
+						fill: $black;
+					}
+				}
+
+				.productDesc {
+					display: block;
+					color: $white;
+				}
+
+				.formBtn {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.noImagePadding {
+		section {
+			.imgContain {
+				img.productImg {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	&.darkMode {
+		section {
+			color: $white;
+
+			.imgContain {
+				// border: 2px solid $white;
+			}
+
+			.productInfo {
+				// border-top: 2px solid $white;
+				// border-bottom: 2px solid $white;
+
+				svg {
+					path {
+						fill: $white;
+						transition: $tr-med;
+					}
+
+					circle {
+						fill: $black;
+						stroke: $white;
+						transition: $tr-med;
+					}
+				}
+			}
+
+			&:hover {
+				.imgContain {
+					// background-color: $white;
+				}
+
+				.productInfo {
+					svg {
+						path {
+							fill: $black;
+						}
+
+						circle {
+							fill: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+}

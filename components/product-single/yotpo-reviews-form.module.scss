@@ -1,0 +1,132 @@
+.YotpoReviewsForm {
+  .reviewsButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+
+    @media (min-width: $t) {
+      flex-direction: row;
+    }
+
+    span {
+      margin: 0 0 2rem;
+      @media (min-width: $t) {
+        margin: 0;
+      }
+    }
+  }
+
+  .thankYouMessage {
+    text-align: center;
+    color: $white;
+  }
+
+  form {
+    width: 100%;
+    max-width: 100%;
+
+    @media (min-width: $t) {
+      max-width: 50%;
+    }
+
+    .stars {
+      display: inline-block;
+      cursor: pointer;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin: 0 0.25rem 0 0;
+      }
+
+      &:hover svg,
+      &:hover ~ & svg {
+        fill: $white;
+      }
+    }
+
+    input,
+    textarea {
+      @include fonttype(18, 23, 0);
+
+      // === Input placeholders
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $white;
+        font-family: $font-body;
+        @include fonttype(18, 23, 0);
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $white;
+        font-family: $font-body;
+        @include fonttype(18, 23, 0);
+      }
+
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: $white;
+        font-family: $font-body;
+        @include fonttype(18, 23, 0);
+      }
+    }
+
+    input:not([type="radio"]) {
+      background-color: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      outline: 0;
+      border: 0;
+      border-bottom: 1px solid $white;
+      color: $white;
+      padding: 1rem 0;
+      width: 100%;
+      margin: 0 0 0.25rem;
+      font-family: $font-body;
+      max-width: 100%;
+      margin: 0 0 2rem;
+
+      @media (min-width: $md) {
+        padding: 1rem;
+      }
+
+      &:focus {
+        // box-shadow: inset 0 -10px 10px -10px $pink;
+        // outline: none;
+        // animation: pulsate 2s infinite ease-in-out;
+      }
+
+      @keyframes pulsate {
+        0% {
+          box-shadow: inset 0 -10px 10px -10px rgba($pink, 0.5);
+        }
+        50% {
+          box-shadow: inset 0 -10px 10px -10px rgba($pink, 1), inset 0 -10px 10px -10px rgba($pink, 1);
+        }
+        100% {
+          box-shadow: inset 0 -10px 10px -10px rgba($pink, 0.5);
+        }
+      }
+    }
+
+    textarea {
+      font-family: $font-body;
+      background-color: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      outline: 0;
+      border: 0;
+      border: 1px solid $white;
+      color: $white;
+      padding: 1rem;
+      min-height: 8rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 2rem;
+    }
+  }
+}

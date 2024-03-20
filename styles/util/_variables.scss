@@ -1,0 +1,135 @@
+// Variables
+$font-header: 'elza', Inter; // weight 700
+$font-body: 'elza', Inter;
+
+// Brand Colors
+$black-strict: #000000;
+$black: #1b1b1d; // Black
+$light-black: #242426;
+$gray-alt: #505050;
+$charcoal: #363636;
+$pink: #d20b7d;
+$blue: #3dd9e9;
+$red: #ea3438;
+$green: #72bd66;
+$gold: #ecd43a;
+
+//probably don't need these
+$ltgray: #dcd5cf; // Light Gray
+$gray: #888888; // Type Gray
+
+// Useful Colors
+$white: #fff;
+
+// Color Aliases
+$black: $black;
+$ltgrey: $ltgray;
+$grey: $gray;
+
+// Responsive Breakpoints
+$dt-xxl: 2000px;
+$dt-xl: 1700px;
+$dt: 1500px;
+$laptop: 1200px;
+$md: 950px;
+$t: 768px;
+$m: 450px;
+$xs: 320px; // iPhone 5+ users
+
+// Transition
+// ---
+$ease-roll: cubic-bezier(0.15, 0.5, 0.2, 1.05);
+$cubic-ease: cubic-bezier(0.8, 0, 0.2, 1);
+$cubic-goog: cubic-bezier(0.2, 0, 0.2, 1);
+$tr-fast: 0.2s;
+$tr-med: 0.4s;
+$tr-slow: 0.6s;
+$tr-slower: 1s;
+$tr-slowest: 1.2s;
+
+// Sitewide spacing
+// ---
+
+// Global Gutters / text spacing
+$spacing-xs: 0.5rem;
+$spacing-s: 1rem;
+$spacing-m: 1.5rem;
+$spacing-l: 2rem;
+$spacing-big: $spacing-l;
+$spacing-xl: 3rem;
+$spacing-xxl: 4.5rem;
+$spacing-xxxl: 6rem;
+$spacing-xxxxl: 8rem;
+
+// mobile
+$gutter-m-big: 1.75rem;
+$gutter-m-sm: 1.25rem;
+
+// desktop
+$gutter-d-xl: 15vw;
+$gutter-d-l: 10vw;
+$gutter-d-big: $gutter-d-l;
+$gutter-d-md: 7vw;
+$gutter-d-sm: 5vw;
+$gutter-d-xs: 3.5vw;
+$gutter-d-xxs: 3vw;
+
+// Base Body Pixel Size
+// ---
+$bpx: 16;
+
+// Mixins
+// ---
+@mixin fonttype($fsize, $lheight: null, $lspacing: null) {
+  font-size: calc(#{$fsize}rem / #{$bpx});
+
+  @if $lheight==null {
+    line-height: 1;
+  } @else {
+    line-height: calc(#{$lheight} / #{$fsize});
+  }
+
+  @if $lspacing==null {
+    letter-spacing: 0;
+  } @else {
+    letter-spacing: calc(#{$lspacing}em / #{$fsize});
+  }
+}
+
+@mixin absolute($top, $right: null, $bottom: null, $left: null) {
+  @if $right==null {
+    $right: $top;
+    $left: $top;
+    $bottom: $top;
+  } @else if $bottom==null {
+    $bottom: $top;
+    $left: $right;
+  } @else if $left==null {
+    $left: $right;
+  }
+
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  top: $top;
+}
+
+@mixin fixed($top, $right: null, $bottom: null, $left: null) {
+  @if $right==null {
+    $right: $top;
+    $left: $top;
+    $bottom: $top;
+  } @else if $bottom==null {
+    $bottom: $top;
+    $left: $right;
+  } @else if $left==null {
+    $left: $right;
+  }
+
+  position: fixed;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  top: $top;
+}

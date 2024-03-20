@@ -1,0 +1,87 @@
+section.productCarousel {
+  background-color: $black;
+  position: relative;
+
+  @media (min-width: $t) {
+    background-color: transparent;
+    padding: $gutter-d-md 0 0;
+  }
+
+  > .container {
+    @media (min-width: $t) {
+      border-top: 2px solid $black;
+      border-bottom: 2px solid $black;
+    }
+
+    .swiperCarousel {
+      :global(.swiper-wrapper) {
+        align-items: normal;
+
+        :global(.swiper-slide) {
+          @media (min-width: $t) {
+            height: auto;
+            width: 30% !important;
+          }
+        }
+      }
+
+      .swiperSlide {
+        margin-right: 0;
+      }
+    }
+
+    .buttonWrap {
+      @media (min-width: $t) {
+        display: none;
+      }
+
+      .prevBtn,
+      .nextBtn {
+        cursor: pointer;
+        height: $spacing-xl;
+        width: $spacing-xl;
+        position: absolute;
+        top: 50%;
+        bottom: 0;
+        z-index: 10;
+
+        span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .nextBtn {
+        right: $spacing-xs;
+        left: auto;
+      }
+
+      .prevBtn {
+        left: $spacing-xs;
+        right: auto;
+
+        span {
+          transform: rotate(180deg);
+        }
+      }
+
+      .nextBtn {
+      }
+    }
+  }
+}

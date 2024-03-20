@@ -1,0 +1,8 @@
+.objectContain {
+  background-color: transparent;
+  height: 20rem;
+
+  @media (min-width: $md) {
+    height: 40rem;
+  }
+}

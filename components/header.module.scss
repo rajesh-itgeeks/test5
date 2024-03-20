@@ -1,0 +1,504 @@
+.Header {
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	transform: translate3d(0, 0, 0);
+	transition: $tr-med;
+	background-color: rgba($black, 1);
+	border-bottom: 1px solid $white;
+
+	@media (max-width: 800px) {
+		min-height: 4.8rem;
+	}
+	@media (min-width: $t) {
+		padding: 0;
+		
+		min-height: 6.75rem;
+	}
+
+	&.menuOpen {
+		transition: 0s;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+	}
+
+	> .titleArea {
+		position: relative;
+		z-index: 10;
+		padding: 0.5rem 1.25rem;
+		width: 100%;
+		max-width: 40%;
+
+		@media (min-width: $t) {
+			padding: 0 1.5vw 0;
+			max-width: 15%;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			object-fit: contain;
+			padding: 0 1.5rem;
+			@media (max-width: 800px) {
+				padding: 0;
+				margin-left: 1rem;
+			}
+		}
+
+		svg {
+			width: 93px;
+			height: 40px;
+
+			@media (min-width: $t) {
+				width: 9rem;
+				height: 4rem;
+			}
+		}
+	}
+
+	> .marqueeArea {
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		max-width: 100%;
+		order: 1;
+		border-top: 1px solid $white;
+		border-bottom: 1px solid $white;
+
+		@media (min-width: $t) {
+			border: 0;
+			border-right: 1px solid $white;
+			order: 0;
+			max-width: 40%;
+		}
+	}
+
+	> .navArea {
+		width: 100%;
+		max-width: 60%;
+		justify-content: flex-end;
+
+		@media (min-width: $t) {
+			justify-content: space-between;
+			max-width: 83%;
+		}
+
+		ul.navDesktop {
+			display: none;
+			width: 100%;
+			padding: 0;
+
+			@media (min-width: $t) {
+				display: flex;
+				align-items: flex-end;
+			}
+
+      > .navIcons {
+        display: flex;
+        align-items: center;
+
+        > .userIcon {
+          cursor: pointer;
+          border: 1px solid white;
+          border-radius: 50%;
+          padding: 0.2rem  0.3rem;
+    
+          @media (min-width: $t) {
+            margin: 0 0 0;
+          }
+    
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+    
+            @media (min-width: $t) {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+      }
+
+			li {
+				@media (min-width: $t) {
+					padding: 0 1rem;
+				}
+
+				a {
+					color: $white;
+					padding: 0;
+					text-decoration: none;
+
+					&::after {
+						content: '';
+						width: 100%;
+						height: 1px;
+						display: block;
+						background-color: $white;
+						margin-top: 0.25rem;
+						transform-origin: left;
+						transform: scaleX(0);
+						transition: $tr-fast;
+					}
+
+					&:hover {
+						&::after {
+							transform: scaleX(1);
+						}
+					}
+				}
+			}
+
+			> div {
+				cursor: pointer;
+			}
+		}
+
+		.navCartIcon {
+			cursor: pointer;
+			margin: 0 1.5rem 0 0;
+
+			@media (min-width: $t) {
+				margin: 0 0 0;
+			}
+
+			svg {
+				width: 1.5rem;
+				height: 1.5rem;
+
+				@media (min-width: $t) {
+					width: 2rem;
+					height: 2rem;
+				}
+			}
+		}
+
+    
+
+		// Nav Mobile Menu Start
+		.navMobile {
+			display: block;
+
+			@media (min-width: $t) {
+				display: none;
+			}
+
+			.navBtnsContain {
+				display: flex;
+				align-items: center;
+				.userIcon {
+					display: none;
+				}
+				.userIcon, .navCartIcon {
+					// display: none;
+				}
+		
+			}
+
+			.navButton {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				position: relative;
+				z-index: 10;
+				background-color: transparent;
+				height: 40px;
+				width: 40px;
+				padding: 12px 9px;
+				margin: 0 0.5rem 0 0;
+
+				&:before,
+				&:after {
+					content: '';
+					transform-origin: center;
+				}
+
+				&:before,
+				&:after,
+				span {
+					background-color: $white;
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 2px;
+					border-radius: 50rem;
+					transition: $tr-fast;
+				}
+			}
+
+			.navMobileContain {
+				background-color: $black-strict;
+				position: fixed;
+				padding: 6rem $gutter-m-sm 0;
+				z-index: 9;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				height: 100vh;
+				transition: $tr-fast;
+				transform: translate3d(100%, 0, 0);
+
+				.navItem {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: $white;
+					margin: 0 0 1.5rem;
+					padding: 0;
+					text-decoration: none;
+				}
+
+				.navMbileFooter {
+					padding: 0 $gutter-m-big 2.5rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					@include absolute(0, auto, 0, 0);
+					z-index: 99;
+					width: 100%;
+					height: 82.5vh; // Fallback
+					height: 100dvh; // new dynamic unit
+					width: 100%;
+					bottom: 0;
+					left: 0;
+					margin-top: 1rem;
+					pointer-events: none;
+
+					video {
+						display: block;
+						width: 100%;
+						max-width: 50%;
+						margin: 3rem auto;
+					}
+
+					.socialContain {
+						pointer-events: all;
+
+						@media (min-width: $t) {
+							padding: 2.5rem 2.25rem;
+						}
+
+						ul {
+							display: flex;
+							width: 100%;
+							justify-content: space-around;
+
+							li {
+								margin: 0 0 0 0;
+
+								a {
+									position: relative;
+									display: block;
+									padding: 0.75rem;
+									border-radius: 50rem;
+									border: 1px solid $white;
+
+									@media (min-width: $t) {
+										padding: 1rem;
+									}
+
+									&::before {
+										content: '';
+										@include absolute(0, auto, auto, 0);
+										background-color: $white;
+										mix-blend-mode: difference;
+										width: 100%;
+										height: 100%;
+										transform: scaleY(0);
+										border-radius: 50rem;
+										transition: $tr-med $cubic-ease;
+									}
+
+									&:hover {
+										&::before {
+											content: '';
+											transform: scaleY(1);
+										}
+									}
+
+									svg,
+									span {
+										display: block;
+										width: 1rem;
+										height: 1rem;
+
+										@media (min-width: $t) {
+											width: 1.5rem;
+											height: 1.5rem;
+										}
+									}
+
+									svg {
+										path {
+											fill: $white;
+										}
+									}
+
+									&:hover {
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.navMobileOpen {
+				.navButton {
+					&:before {
+						transform: translate3d(0, 8px, 0) rotate(45deg);
+					}
+
+					&:after {
+						transform: translate3d(0, -6px, 0) rotate(-45deg);
+					}
+
+					span {
+						opacity: 0;
+					}
+				}
+
+				.navMobileContain {
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+		// Nav Mobile Menu End
+	}
+
+	&.scrollTop {
+		opacity: 1;
+	}
+
+	&.scrollUp {
+		opacity: 1;
+		background-color: rgba($black, 0.95);
+		// backdrop-filter: blur(10px);
+	}
+
+	&.scrollDown {
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+	}
+
+	// Light Mode
+	&.lightMode {
+		background-color: rgba($white, 1);
+
+		@media (min-width: $t) {
+			border-bottom: 1px solid $black;
+		}
+
+		> .titleArea {
+			border-right: 1px solid $black;
+		}
+
+		> .marqueeArea {
+			border-top: 1px solid $black;
+			border-bottom: 1px solid $black;
+
+			@media (min-width: $t) {
+				border: 0;
+				border-right: 1px solid $black;
+			}
+		}
+
+		.navCartIcon {
+			svg {
+				path {
+					fill: $black;
+				}
+			}
+		}
+    .userIcon {
+      border: 1px solid black;
+      border-radius: 50%;
+			svg {
+				path {
+					fill: $black;
+				}
+			}
+		}
+
+		> .navArea {
+			ul.navDesktop {
+				li {
+					a {
+						color: $black;
+
+						&::after {
+							content: '';
+
+							background-color: $black;
+						}
+					}
+				}
+			}
+
+			.navMobile {
+				display: block;
+
+				@media (min-width: $t) {
+					display: none;
+				}
+
+				.navButton {
+					background-color: transparent;
+
+					&:before,
+					&:after,
+					span {
+						background-color: $black;
+					}
+				}
+
+				.navMobileContain {
+					background-color: $white;
+
+					.navItem {
+						color: $black;
+					}
+
+					.navMbileFooter {
+						.socialContain {
+							ul {
+								li {
+									a {
+										border: 1px solid $black;
+
+										&::before {
+											content: '';
+
+											background-color: $black;
+										}
+
+										svg {
+											path {
+												fill: $black;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.scrollUp {
+			opacity: 1;
+			background-color: rgba($white, 0.95);
+		}
+	}
+}

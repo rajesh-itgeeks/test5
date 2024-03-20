@@ -1,0 +1,106 @@
+section.pageDefault {
+  .container {
+    padding: 0;
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+
+    .titleContain {
+      padding: 8rem $gutter-m-sm 4rem;
+
+      @media (min-width: $md) {
+        padding: 10vw 5vw 8rem;
+      }
+
+      .pageTitle {
+        position: relative;
+        margin: 0 0 0;
+
+        @media (min-width: $md) {
+          padding: 0 25% 0 0;
+        }
+
+        .arrowContain,
+        .arrowContain > svg {
+          display: block;
+          width: 2.85rem;
+          height: 2.85rem;
+        }
+
+        .arrowContain {
+          position: relative;
+          transform: rotate(90deg);
+          margin: 2rem 0 0;
+
+          @media (min-width: $md) {
+            margin: 0;
+            @include absolute(1.75rem, 0, auto, auto);
+          }
+
+          svg {
+            overflow: visible;
+
+            circle {
+              fill: $black;
+              stroke: $black;
+            }
+
+            path {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .contentContain {
+      padding: 4rem $gutter-m-sm 3rem;
+      border-top: 1px solid $black;
+
+      @media (min-width: $md) {
+        border-top: 2px solid $black;
+        padding: 5vw 25% 5vw 5vw;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0 0 1rem;
+
+      @media (min-width: $md) {
+        margin: 0 0 1.5rem;
+      }
+    }
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $pink;
+      }
+    }
+
+    p {
+      color: $black;
+      margin: 0 0 2rem;
+
+      @media (min-width: $md) {
+        margin: 0 0 2.5rem;
+      }
+    }
+
+    ul {
+      list-style-type: circle;
+      padding: 0 0 0 1rem;
+
+      li {
+        margin: 0 0 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.productReviewSlider {
+  position: relative;
+  display: block;
+  height: 100%;
+  padding: 3rem 0 9rem;
+
+  @media (min-width: $md) {
+    padding: 7vw 0;
+  }
+
+  .leadin {
+    color: $white;
+    text-align: center;
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+      margin: 0 0 4rem;
+    }
+  }
+
+  .productSliderInner {
+    background: transparent;
+    margin: 0 0;
+    padding: 0;
+
+    @media (min-width: $md) {
+      margin: 0 0;
+      padding: 0;
+    }
+
+    :global(.swiper) {
+      height: 100%;
+
+      :global(.swiper-wrapper) {
+        align-items: center;
+
+        :global(.swiper-slide) {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .quote {
+            text-align: center;
+            color: $white;
+            text-transform: uppercase;
+            padding: 0 $gutter-m-sm;
+            margin: 0 0 2.5rem;
+
+            @media (min-width: $md) {
+              padding: 0 27vw;
+            }
+
+            strong {
+              font-weight: 900;
+              font-style: italic;
+            }
+          }
+
+          .author {
+            text-align: center;
+            color: $white;
+
+            span {
+              display: block;
+              font-style: normal;
+              margin: 0.5rem 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    .btnWrap {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      bottom: 3.5rem;
+      top: auto;
+      z-index: 9;
+      padding: 0 30vw;
+      pointer-events: none;
+
+      @media (min-width: $md) {
+        bottom: auto;
+        top: 50%;
+        padding: 0 3rem;
+      }
+
+      > div {
+        pointer-events: all;
+        cursor: pointer;
+
+        svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        &.nextBtn,
+        &.prevBtn {
+          height: 2.75rem;
+          width: 2.75rem;
+          transition: $tr-fast;
+
+          @media (min-width: $md) {
+            height: 4rem;
+            width: 4rem;
+          }
+        }
+
+        &.prevBtn {
+          transform: scale(-1) translate3d(0, 0, 0);
+
+          &:hover {
+            transform: scale(-1.1);
+          }
+
+          &:active {
+            transform: scale(-1) translate3d(1rem, 0, 0);
+          }
+        }
+
+        &.nextBtn {
+          transform: scale(1) translate3d(0, 0, 0);
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &:active {
+            transform: scale(1) translate3d(1rem, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}

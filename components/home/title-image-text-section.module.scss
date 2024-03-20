@@ -1,0 +1,126 @@
+section.titleImageTextSection {
+  background-color: $black;
+  color: $white;
+
+  > .container {
+    padding: $spacing-xxl $gutter-m-sm;
+
+    @media (min-width: $t) {
+    }
+
+    @media (min-width: $md) {
+      padding: 12.5vw $gutter-d-xl $gutter-d-l $gutter-d-sm;
+    }
+
+    .title {
+      margin: 0 0 $spacing-xl 0;
+      @media (min-width: $md) {
+        margin: 0 0 $gutter-d-sm 0;
+      }
+
+      span {
+        transform-origin: center bottom;
+        display: inline-block;
+      }
+
+      small {
+        overflow-y: hidden;
+        line-height: 1;
+      }
+
+      .leadin {
+        margin: 0 0 $spacing-s 0;
+
+        @media (min-width: $md) {
+          margin: 0 0 $spacing-l 0;
+        }
+      }
+
+      .mainTitle {
+        span.spinContain {
+          // vertical-align: middle;
+          margin: 0 -0.25rem;
+
+          @media (min-width: $md) {
+            margin: 0 -0.5rem;
+          }
+
+          svg {
+            width: 4rem;
+            height: 4rem;
+
+            @media (min-width: $md) {
+              width: 9rem;
+              height: 9rem;
+            }
+          }
+        }
+      }
+    }
+
+    .sideBySide {
+      @media (min-width: $md) {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .left {
+        @media (min-width: $md) {
+          width: 45%;
+        }
+
+        .imagery {
+          margin: 0 0 $spacing-xl 0;
+          max-height: 22.5rem;
+          overflow: hidden;
+          border-radius: 10px;
+
+          @media (min-width: $md) {
+            margin: 0;
+            max-height: 45rem;
+          }
+
+          .image {
+            border-radius: 10px;
+            position: static !important;
+            height: auto;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .right {
+        @media (min-width: $md) {
+          width: 55%;
+          padding: 0 0 $gutter-d-xs $gutter-d-l;
+        }
+
+        .subTitle {
+          margin: 0 0 $spacing-m 0;
+
+          // span {
+          //   transform-origin: center bottom;
+          //   display: inline-block;
+          // }
+
+          // small {
+          //   // overflow-y: hidden;
+          //   line-height: 1;
+          // }
+        }
+
+        .reg {
+          margin: 0 0 $spacing-l 0;
+          @media (min-width: $md) {
+            max-width: 75%;
+          }
+        }
+
+        .ctaWrap {
+        }
+      }
+    }
+  }
+}

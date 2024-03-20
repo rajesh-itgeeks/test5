@@ -1,0 +1,54 @@
+.ingredients {
+	height: 15rem;
+	width: 100%;
+	background-color: $white;
+	padding: 40px 32px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@media (max-width: 800px) {
+		gap: 1.5rem;
+		padding: 1rem;
+		justify-content: center;
+	}
+
+	>.ingredientBody {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+
+		@media (max-width: 800px) {
+			width: min-content;
+		}
+
+		svg {
+			width: 6.25rem;
+			height: 5.1rem;
+
+			@media (max-width: 800px) {
+				width: 2.4rem;
+				height: 2.4rem;
+			}
+
+			@media (min-width: $t) {
+				width: 5.6rem;
+				height: 5.1rem;
+			}
+		}
+
+		>.rotate15 {
+			position: absolute;
+			left: -1rem;
+			top: -1rem;
+			transform: rotate(-15deg);
+			@media (max-width: 800px) {
+				left: -0.8rem;
+				top: -1rem;
+			}
+		}
+	}
+}

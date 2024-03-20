@@ -1,0 +1,84 @@
+section.homeIntroText {
+  overflow: hidden;
+
+  > .container {
+    padding: 5.5rem $gutter-m-sm;
+
+    @media (min-width: $t) {
+    }
+
+    @media (min-width: $md) {
+      padding: 7vw 5vw 7vw;
+    }
+
+    .contentContain {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      @media (min-width: $md) {
+        flex-direction: row;
+      }
+
+      .textContain {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 4rem;
+
+        @media (min-width: $md) {
+          max-width: 50%;
+          margin: 7vw 0 0;
+        }
+
+        small {
+          overflow-y: hidden;
+          line-height: 1;
+        }
+
+        span {
+          transform-origin: center bottom;
+        }
+
+        strong {
+          span {
+            font-weight: 900;
+            font-style: italic;
+          }
+        }
+      }
+
+      .mediaContain {
+        width: 100%;
+        max-width: 100%;
+
+        @media (min-width: $md) {
+          max-width: 50%;
+        }
+
+        video {
+          width: 100%;
+          max-width: 65%;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+
+          @media (min-width: $md) {
+            max-width: 50%;
+          }
+        }
+      }
+    }
+
+    .divider {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+      margin: 5.5rem 0 0;
+
+      @media (min-width: $md) {
+        margin: 15vw 0 0;
+      }
+    }
+  }
+}

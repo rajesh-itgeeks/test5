@@ -1,0 +1,29 @@
+section.productReviews {
+  background-color: $black;
+
+  .container {
+    position: relative;
+    padding: 0 0 3.5rem;
+
+    @media (min-width: $t) {
+      padding: 0 0 5vw;
+    }
+
+    .reviewsContain {
+      position: relative;
+      margin: 0 5vw;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.spacer {
+  padding: 3rem 0;
+
+  @media (min-width: $md) {
+    padding: 5vw 0 0;
+  }
+}

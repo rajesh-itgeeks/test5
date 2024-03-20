@@ -1,0 +1,376 @@
+.productHero {
+  background-color: $black;
+  overflow: hidden;
+  position: relative;
+  padding-top: 18rem;
+  @media (max-width: 800px) {
+    padding: 0 1.5rem;
+    padding-top: 11rem;
+  }
+  .bgStar {
+    position: absolute;
+    top: 12rem;
+    right: 0;
+    z-index: 0;
+  }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+  
+    @media (min-width: $md) {
+      .topContainer {
+        margin-top: 7rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      flex-direction: row;
+      padding: 0 5rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .mediaContainer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 1fr;
+          grid-column-gap: 30px;
+          grid-row-gap: 0px;
+    
+          .mediaContainer {
+            align-items: center;
+            display: flex;
+        img {
+          width: 100%;
+          height: auto;
+          max-height: 380px;
+          object-fit: contain;
+        }
+      }
+    }
+    .productMedia {
+      position: relative;
+      height: 31.25rem;
+      padding: 2.5rem;
+      width: 31.25rem;
+      background-color: $light-black;
+      object-fit: cover;
+      border-radius: 2.5rem;
+      @media (min-width: 750px) and (max-width: 1000px) {
+        width: 100%;
+        height: calc(100% - 3rem);
+      }
+
+      @media (max-width: 750px) {
+        width: 100%;
+        height: 25rem;
+      }
+
+      .btnWrap {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        top: -7rem;
+        left: -3rem;
+        // align-items: center;
+        z-index: 9;
+        padding: 0 1rem;
+        pointer-events: none;
+        @media (max-width: 800px) {
+          top: -5rem;
+          left: -1rem;
+        }
+        @media (min-width: $md) {
+          padding: 0 3rem;
+        }
+
+        > div {
+          pointer-events: all;
+          cursor: pointer;
+
+          svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+
+          &.nextBtn,
+          &.prevBtn {
+            &:hover {
+              svg {
+                circle {
+                  fill: $white;
+                }
+
+                path {
+                  fill: $black;
+                }
+              }
+            }
+          }
+
+          &.nextBtn,
+          &.prevBtn {
+            height: 2.75rem;
+            width: 2.75rem;
+            transition: $tr-fast;
+
+            @media (min-width: $md) {
+              height: 4rem;
+              width: 4rem;
+            }
+          }
+
+          &.prevBtn {
+            transform: scale(-1) translate3d(0, 0, 0);
+
+            &:hover {
+              transform: scale(-1.1);
+            }
+
+            &:active {
+              transform: scale(-1) translate3d(1rem, 0, 0);
+            }
+          }
+
+          &.nextBtn {
+            transform: scale(1) translate3d(0, 0, 0);
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transform: scale(1) translate3d(1rem, 0, 0);
+            }
+          }
+        }
+      }
+      .icon {
+        cursor: pointer;
+        position: absolute;
+        top: -7rem;
+        left: 0;
+      }
+    }
+
+    .productInfo {
+      width: 100%;
+      max-width: 100%;
+      padding: 3rem $gutter-m-sm;
+      @media (min-width: 750px) and (max-width: 1000px) {
+        padding: 0;
+        padding-bottom: 3rem;
+      }
+      @media (max-width: 800px) {
+        padding: 0;
+        padding-top: 2rem;
+      }
+      .titleContainer {
+        display: flex;
+        // justify-content: space-between;
+        align-items: flex-start;
+      @media (min-width: 750px) and (max-width: 1000px) {
+          align-items: flex-start;
+      }
+        gap: 3rem;
+        @media (max-width: 800px) {
+          flex-wrap: wrap;
+          flex-direction: column;
+          gap: 0;
+          .productTitle {
+            margin-bottom: 0;
+          }
+        }
+        .selector {
+          color: $white;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          border: 1px solid $white;
+          color: $white;
+          text-align: center;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2px;
+          padding: 0.4rem 1rem;
+          border-radius: 2.5rem;
+          white-space: nowrap;
+          @media (max-width: 800px) {
+            margin-top: -0.6rem;
+          }
+        }
+      }
+
+      @media (min-width: $md) {
+        max-width: 45%;
+        padding: 0 4.25rem 4.25rem;
+      }
+
+      .reviewsContain {
+        position: relative;
+        margin: 1.7rem 0 0.5rem;
+        color: $white;
+        @media (min-width: 750px) and (max-width: 1000px) {
+          margin: 2rem 0;
+        }
+        @media (min-width: $md) {
+          margin: 1.7rem 0 1rem;
+        }
+      }
+
+      .productTitle,
+      .productDesc,
+      .productCost {
+        color: $white;
+        @media (min-width: 750px) and (max-width: 1000px) {
+          margin-top: 1rem;
+        }
+        @media (max-width: 800px) {
+          margin-top: 2.5rem;
+        }
+      }
+
+      .productTitle {
+        margin: 0 0 1rem;
+        font-style: normal;
+        line-height: 49px;
+        font-weight: 500;
+        @media (min-width: $md) {
+          margin: 0 0 2rem;
+          font-size: 40px;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
+         font-size: 24px;
+         line-height: 26px;
+        }
+        @media (max-width: 800px) {
+          font-size: 2rem;
+          text-align: left;
+          width: 100%;
+        }
+      }
+      .ddCont {
+        @media (max-width: 800px) {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+      .productDesc {
+        margin: 0 0 1rem;
+
+        @media (min-width: $md) {
+          margin: 2.2rem 0 2rem;
+        }
+        @media (max-width: 800px) {
+          margin-top: 1.5rem;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          p {
+            font-size: 18px !important;
+            line-height: 22px;
+          }
+        }
+      }
+      .valuePropBadges {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        @media (min-width: 750px) and (max-width: 1000px) {
+          flex-wrap: nowrap;
+          .badgeContain {
+            img {
+                min-width: 93.895px;
+                height: 93.895px;
+                flex-shrink: 0;
+              }
+            }
+        }
+        @media (max-width: 800px) {
+          row-gap: 1.5rem;
+          justify-content: center;
+        }
+        .badgeContain {
+          display: block;
+          width: 100%;
+          max-width: 50%;
+          padding: 1rem;
+          @media (max-width: 800px) {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          @media (min-width: $md) {
+            max-width: 8.25rem;
+            padding: 0 2rem 0 0;
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            @media (max-width: 800px) {
+              width: 6.25rem;
+            }
+          }
+        }
+      }
+    }
+    .cartForm {
+      margin-top: 1.5rem;
+    }
+  }
+}
+.dvnContainer {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #4a4a4a;
+}
+.ntFacts {
+  width: 100%;
+  margin-top: 2rem;
+  @media (max-width: 750px) {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    padding: 8px 16px;
+    color: var(--base-white, #FFF);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 40px;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      @media (min-width: 1000px) {
+        background-color: var(--base-white, #FFF);
+        color: var(--base-black, #000);
+      }
+    }
+
+  }
+}

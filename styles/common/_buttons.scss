@@ -1,0 +1,79 @@
+.btn {
+  transition: $tr-fast;
+  background-color: $white;
+  border: 2px solid $black;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50rem;
+  outline: 0;
+  width: auto;
+  position: relative;
+  width: auto;
+  text-decoration: none;
+  color: $black;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: Poppins;
+  // min-width: 16rem;
+  width: 100%;
+
+  @media (min-width: $md) {
+    width: auto;
+    min-width: 12.5rem;
+  }
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+
+    span {
+      svg {
+        g,
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    svg {
+      transition: $tr-fast;
+      display: block;
+      width: 50%;
+      height: auto;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateY(-50%);
+
+      g,
+      path {
+        transition: $tr-fast;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+div.productCard {
+  position: relative;
+  margin: 0;
+
+  @media (min-width: $t) {
+    transition: $tr-fast;
+    border-right: 2px solid $black;
+    background-color: transparent;
+    height: 100%;
+
+    &:hover {
+      background-color: $black;
+      > .container {
+        .productImagery {
+          transform: translateY(-$gutter-d-xxs);
+
+          .productImg {
+          }
+        }
+
+        .productInfo {
+          .productTitle {
+          }
+
+          .desc {
+          }
+
+          .accentArrow {
+            svg {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .container {
+    padding: $spacing-xxl 2rem $spacing-xl;
+    display: block;
+    text-decoration: none;
+
+    @media (min-width: $t) {
+      padding: $gutter-d-md $gutter-d-xs $gutter-d-xs $gutter-d-xs;
+    }
+
+    @media (min-width: $dt) {
+      padding: 7vw 2.5vw 2.5vw;
+    }
+
+    .productImagery {
+      margin: 0 0 $spacing-l 0;
+
+      @media (min-width: $t) {
+        transition: $tr-slow;
+      }
+
+      .productImg {
+        position: static !important;
+        max-width: 50%;
+        margin: 0 auto;
+        display: block;
+
+        @media (min-width: $t) {
+          max-width: 35%;
+        }
+
+        @media (min-width: $dt) {
+          //max-width: 50%;
+        }
+      }
+    }
+
+    .productInfo {
+      text-align: center;
+      color: $white;
+
+      @media (min-width: $t) {
+        text-align: left;
+        position: relative;
+      }
+
+      .productTitle {
+        margin: 0 0 $spacing-s 0;
+      }
+
+      .desc {
+        max-width: 700%;
+        margin: 0 auto;
+
+        @media (min-width: $t) {
+          max-width: 80%;
+          margin: 0 auto 0 0;
+        }
+      }
+
+      .accentArrow {
+        display: none;
+        @media (min-width: $t) {
+          display: block;
+          height: $spacing-l;
+          width: $spacing-l;
+          position: absolute;
+          right: 0;
+          left: auto;
+          top: 0;
+          bottom: auto;
+        }
+        @media (min-width: $dt) {
+          height: $spacing-xl;
+          width: $spacing-xl;
+        }
+
+        svg {
+          @media (min-width: $t) {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+          }
+
+          circle,
+          path {
+            transition: $tr-med;
+          }
+        }
+
+        &:hover {
+          svg {
+            circle {
+              fill: $white;
+            }
+
+            path {
+              fill: $black;
+              // stroke: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

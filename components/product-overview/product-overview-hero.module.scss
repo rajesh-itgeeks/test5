@@ -1,0 +1,254 @@
+section.productOverviewHero {
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: $md) {
+    overflow: visible;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    padding: 16rem 0 3rem;
+
+    @media (min-width: $md) {
+      padding: 10vw 5vw 5vw;
+    }
+
+    .mainTitle {
+      position: relative;
+      margin: 0 0 3rem;
+      padding: 0 $gutter-m-sm 0;
+      z-index: 2;
+
+      @media (min-width: $md) {
+        padding: 0;
+        z-index: 1;
+      }
+
+      small {
+        overflow-y: hidden;
+        line-height: 1;
+      }
+
+      span {
+        transform-origin: center bottom;
+        display: inline-block;
+
+        svg,
+        .extraSpin {
+          width: 3.75rem;
+          height: 3.75rem;
+
+          @media (min-width: $md) {
+            width: 12rem;
+            height: 12rem;
+          }
+        }
+
+        .extraSpin {
+          margin: 0 -0.25rem;
+
+          @media (min-width: $md) {
+            margin: 0 -1rem;
+          }
+        }
+
+        svg {
+          path {
+            fill: $black;
+            stroke: $black;
+          }
+        }
+      }
+    }
+
+    .btnsContain {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0 1rem;
+      width: 100%;
+
+      @media (min-width: $md) {
+        flex-direction: row;
+        overflow-x: initial;
+        width: auto;
+      }
+
+      .catsBtnMobileContain {
+        display: block;
+
+        @media (min-width: $md) {
+          display: none;
+        }
+
+        .catsBtnMobile {
+        }
+      }
+
+      .arrowDown {
+        margin: 0 1.25rem 0 0;
+        cursor: pointer;
+        transition: $tr-fast;
+        transform: scale(1);
+        display: block;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        svg {
+          overflow: visible;
+          transform: rotate(90deg);
+
+          width: 2.875rem;
+          height: 2.875rem;
+
+          path {
+            fill: $white;
+          }
+          circle {
+            fill: $black;
+            stroke: $black;
+          }
+        }
+      }
+
+      .catContain {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0;
+        width: 100%;
+        transition: $tr-med;
+        max-height: 0;
+        overflow: hidden;
+
+        @media (min-width: $md) {
+          width: auto;
+          flex-direction: row;
+          padding: 0;
+          display: flex;
+          overflow: visible;
+          max-height: none;
+        }
+
+        &.open {
+          /* When open, gotta set a large enough max-height for animation */
+          max-height: 1000px; /* you can adjust this value */
+
+          @media (min-width: $md) {
+            max-height: none;
+          }
+        }
+
+        &.close {
+          max-height: 0;
+
+          @media (min-width: $md) {
+            max-height: none;
+          }
+        }
+
+        > span {
+          margin: 0 0 1rem;
+
+          @media (min-width: $md) {
+            margin: 0 1.25rem 0 0;
+          }
+
+          &:first-child {
+            margin: 2rem 0 1rem;
+
+            @media (min-width: $md) {
+              margin: 0 1.25rem 0 0;
+            }
+          }
+
+          &:last-child {
+            margin: 0 0;
+
+            @media (min-width: $md) {
+              margin: 0 1.25rem 0 0;
+            }
+          }
+
+          &:only-child {
+            margin: 2rem 0 1rem;
+
+            @media (min-width: $md) {
+              margin: 0 1.25rem 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    .drinkImg {
+      position: absolute;
+
+      img {
+        width: 15rem !important;
+        height: auto !important;
+        display: block;
+        margin: 0;
+        pointer-events: none;
+      }
+
+      &.drink1 {
+        top: 32.5vw !important;
+        left: 62.5vw !important;
+        z-index: 4;
+
+        @media (min-width: $md) {
+          top: 16vw !important;
+          left: 55vw !important;
+        }
+
+        img {
+          width: 6rem !important;
+
+          @media (min-width: $md) {
+            width: 15rem !important;
+          }
+        }
+      }
+
+      &.drink2 {
+        z-index: 1;
+        top: 32vw !important;
+        left: 5vw !important;
+
+        @media (min-width: $md) {
+          z-index: 2;
+          top: 24vw !important;
+          left: 80vw !important;
+        }
+
+        img {
+          width: 4rem !important;
+
+          @media (min-width: $md) {
+            width: 10rem !important;
+          }
+        }
+      }
+
+      &.drink3 {
+        z-index: 1;
+        top: 8vw !important;
+        left: 85vw !important;
+
+        img {
+          display: none;
+          width: 7rem !important;
+
+          @media (min-width: $md) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

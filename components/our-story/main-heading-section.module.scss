@@ -1,0 +1,29 @@
+.headingSection {
+  position: relative;
+  .bgStar {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: -50%;
+  }
+  .container {
+    padding: 4rem $gutter-m-sm;
+
+    @media (min-width: $md) {
+      padding: 8rem 4rem;
+    }
+
+    .mainTitle {
+      font-size: 75px;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      line-height: 87.36px;
+      text-transform: uppercase;
+      .luck {
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.reviewBox {
+	height: fit-content; 
+	width: 18.875rem; 
+	background: #242426; 
+	border-radius: 0.375rem; 
+	padding: 1.625rem 1.75rem;
+	@media (max-width: 800px) {
+		width: 100%; 
+
+	}
+	.profileBox {
+		display: flex;
+		align-items: center;
+		gap: 0.813rem
+	}
+}

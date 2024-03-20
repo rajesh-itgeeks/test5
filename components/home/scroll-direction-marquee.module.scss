@@ -1,0 +1,54 @@
+section.scrollDirectionMarquee {
+  background-color: $white;
+  width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  padding: $gutter-m-big 0;
+
+  @media (min-width: $t) {
+  }
+
+  @media (min-width: $md) {
+    padding: 0 0 $gutter-d-xs;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    height: 80vw;
+    will-change: transform;
+
+    @media (min-width: $t) {
+      height: 50vw;
+    }
+    @media (min-width: $md) {
+      height: 28vw;
+    }
+  }
+
+  .imageWrapper {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 20px;
+    height: 100%;
+    padding: 0 1.5rem 0 0;
+
+    .marqueeImg {
+      position: static !important;
+      border-radius: 20px;
+      transform: translate3d(0, 0, 0);
+      height: 100% !important;
+      width: auto !important;
+      display: block;
+      padding: 0 00 0;
+      pointer-events: none;
+    }
+  }
+
+  &.darkMode {
+    background-color: $black-strict;
+  }
+}

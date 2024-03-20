@@ -1,0 +1,64 @@
+section.productIntro {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vw 3.5vw;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+
+    .contentContain {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 4rem;
+
+      @media (min-width: $md) {
+        max-width: 50%;
+        margin: 0;
+      }
+    }
+
+    .mediaContain {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+
+      @media (min-width: $md) {
+        max-width: 50%;
+      }
+
+      .objectContain {
+        position: relative;
+        z-index: 2;
+      }
+
+      .bigSpinContain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include absolute(0, auto, auto, 0);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        svg {
+          width: calc(100% - 1rem);
+
+          @media (min-width: $md) {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.spacer {
+  margin: 3rem 0;
+
+  @media (min-width: $md) {
+    margin: 5vw 0;
+  }
+}

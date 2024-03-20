@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.mainContainer {
+  position: relative;
+  overflow: hidden;
+  .starImg {
+    position: absolute;
+    bottom: -9%;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+  .bgStar {
+    position: absolute;
+    right: 0;
+    top: -11%;
+    z-index: 1;
+    width: 22rem;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+}

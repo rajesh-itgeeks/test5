@@ -1,0 +1,266 @@
+.marqueeGlobal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 6.25rem;
+
+  @media (min-width: $t) {
+    height: 12.5rem;
+  }
+
+  .track {
+    position: relative;
+    transform: translate3d(0, 0, 0); // Force Hardware Acceleration in WebKit
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    overflow: visible;
+    animation: 60s linear marqueeAnimate infinite;
+
+    &.hoverPause {
+      &:hover {
+        @media (min-width: $md) {
+          animation-play-state: paused;
+        }
+      }
+    }
+
+    .contentHolder {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+
+      &,
+      span {
+        transform: translate3d(0, 0, 0); // Force Hardware Acceleration in WebKit
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+      }
+
+      .contentInner {
+        display: flex;
+        height: 35vw;
+        width: 100%;
+        align-items: center;
+
+        @media (min-width: $t) {
+          height: 11rem;
+          width: 100%;
+        }
+
+        .svgContain {
+          display: inline-block;
+          vertical-align: text-bottom;
+          @media (max-width: 850px) and (min-width: 600px) {
+          vertical-align: top;
+          padding-top: 1rem;
+        }
+          svg {
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            margin: 0 1rem;
+            stroke-width: 2;
+
+         
+              @media (min-width: $md) {
+              margin: 0 2rem;
+              width: 10rem;
+              height: 10rem;
+            }
+
+            path {
+              stroke-width: 2;
+
+              @media (min-width: $md) {
+                stroke-width: 1.5;
+              }
+            }
+          }
+        }
+
+        span {
+          cursor: default;
+          color: transparent;
+          transition: $tr-med;
+          padding: 0;
+          display: inline-block;
+
+          @media (min-width: $t) {
+            padding: 0;
+          }
+
+          &:nth-child(1n) {
+            &:hover {
+              color: $blue !important;
+              -webkit-text-stroke: 1.5px $blue !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px $blue !important;
+              }
+            }
+          }
+
+          &:nth-child(2n) {
+            &:hover {
+              color: $red !important;
+              -webkit-text-stroke: 1.5px $red !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px $red !important;
+              }
+            }
+          }
+
+          &:nth-child(3n) {
+            &:hover {
+              color: $green !important;
+              -webkit-text-stroke: 1.5px $green !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px $green !important;
+              }
+            }
+          }
+
+          &:nth-child(4n) {
+            &:hover {
+              color: $pink !important;
+              -webkit-text-stroke: 1.5px $pink !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px $pink !important;
+              }
+            }
+          }
+
+          &:nth-child(5n) {
+            &:hover {
+              color: $gold !important;
+              -webkit-text-stroke: 1.5px $gold !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px $gold !important;
+              }
+            }
+          }
+
+          &.customColor {
+            &:hover {
+              color: var(--product-main-color) !important;
+              -webkit-text-stroke: 1.5px var(--product-main-color) !important;
+
+              @media (min-width: $md) {
+                -webkit-text-stroke: 2px var(--product-main-color) !important;
+              }
+            }
+          }
+        }
+
+        a {
+          position: relative;
+          display: inline-block;
+          height: auto;
+
+          :global(span.tight) {
+            position: absolute;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            text-align: center;
+
+            opacity: 0;
+            transition: $tr-fast;
+
+            svg {
+              display: inline-block;
+              width: 15px;
+              height: 20px;
+              margin-left: 5px;
+              overflow: visible;
+
+              circle,
+              path {
+                stroke: $white;
+              }
+            }
+          }
+
+          &:hover {
+            span {
+              opacity: 1;
+            }
+          }
+        }
+
+        img {
+          display: inline-block;
+          width: auto;
+          height: 35vw;
+          margin: 0 0 0 2.5rem;
+
+          @media (min-width: $t) {
+            height: 80%;
+            margin: 0 0 0 4.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.borderTop {
+    border-top: 2px solid $black;
+  }
+
+  &.borderBottom {
+    border-bottom: 2px solid $black;
+  }
+
+  &.darkMode {
+    background-color: $black;
+
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+
+    &.borderTop {
+      border-color: $white;
+    }
+
+    &.borderBottom {
+      border-color: $white;
+    }
+  }
+
+  &.darkModeAlt {
+    background-color: $black-strict !important;
+  }
+
+  &.reverse {
+    .track {
+      animation: 60s linear marqueeAnimate infinite reverse;
+    }
+  }
+
+  @keyframes marqueeAnimate {
+    0% {
+      transform: translate3d(0%, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}

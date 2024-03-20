@@ -1,0 +1,43 @@
+.productsCta {
+  background: url("/images/vapor-sheen-bg.jpg") center center / 150% 100% no-repeat;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem $gutter-m-sm;
+
+    @media (min-width: $md) {
+      padding: 7vw 25vw;
+    }
+
+    .leadin,
+    .mainTitle {
+      color: $white;
+      text-align: center;
+    }
+
+    .leadin {
+      margin: 0 0 1rem;
+
+      @media (min-width: $md) {
+        margin: 0 0 2rem;
+      }
+    }
+
+    .mainTitle {
+      margin: 0 0 3rem;
+    }
+
+    .ctaContain {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      @media (min-width: $md) {
+        flex-direction: row;
+      }
+    }
+  }
+}

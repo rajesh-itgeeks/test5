@@ -1,0 +1,80 @@
+.titleHero {
+  background: url("/images/vapor-sheen-bg.jpg") center center / 150% 100% no-repeat;
+
+  .container {
+    padding: 4rem $gutter-m-sm;
+    color: $white;
+    @media (min-width: $md) {
+      padding: $gutter-d-xl$gutter-d-l;
+    }
+
+    .mainTitle {
+      text-align: center;
+      @media (max-width: 800px) {
+      font-size: 2.3rem;
+    }
+      small {
+        overflow-y: hidden;
+        line-height: 1;
+      }
+
+      span {
+        transform-origin: center bottom;
+      }
+
+      strong {
+        span {
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+
+      span {
+        display: inline-block;
+        vertical-align: top;
+        .ck {
+          @media (max-width: 500px) {
+            margin-left: -20px;
+          }
+        }
+        svg,
+        .extraSpin {
+          width: 3.7rem;
+          height: 3.7rem;
+          margin-left: 10px;
+          @media (max-width: 500px) {
+              margin-left: -20px;
+            }
+          
+            @media (min-width: 800px) {
+              margin-top: -10px;
+            }
+          @media (min-width: $md) {
+            width: 9rem;
+            height: 9rem;
+          }
+        }
+
+        .extraSpin {
+          margin: 0 -0.25rem;
+
+          @media (min-width: $md) {
+            margin: 0 -1rem;
+          }
+          @media (max-width: 800px) {
+            transform: scale(0.7);
+            margin-top: -1rem;
+            // display: none;
+          }
+        }
+
+        svg {
+          path {
+            fill: $white;
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+}

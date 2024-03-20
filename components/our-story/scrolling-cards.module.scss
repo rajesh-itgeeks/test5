@@ -1,0 +1,62 @@
+section.scrollingCards {
+  position: relative;
+  background-color: $white;
+  overflow: hidden;
+  padding: 0 6.667rem;
+  @media (max-width: 800px) {
+  padding: 0;
+}
+  .bgStar {
+    position: absolute;
+    right: 0;
+    top: -6%;
+    z-index: 1;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+  .bgStarBtm {
+    width: 22rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    bottom: -8%;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+  .mainContainer {
+    position: relative;
+    z-index: 2;
+  }
+  .container {
+    padding: 5rem $gutter-m-sm;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @media (min-width: $md) {
+      padding: 7vw 0 7vw 3.5vw;
+      flex-direction: row;
+    }
+  }
+
+  .desktopView {
+    display: none;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+  }
+
+  .mobileView {
+    display: block;
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+}

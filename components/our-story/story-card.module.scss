@@ -1,0 +1,121 @@
+.storyCard {
+ 
+  .headingSection {
+    position: relative;
+
+    .container {
+      padding: 4rem $gutter-m-sm;
+
+      @media (min-width: $md) {
+        padding: 8rem 4rem;
+      }
+      @media (max-width: 800px) {
+        padding: 2rem 0;
+      }
+
+      .mainTitle {
+        font-size: 75px;
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        line-height: 87.36px;
+        text-transform: uppercase;
+        @media (max-width: 800px) {
+          font-size: 2.3rem;
+          line-height: 2.8rem;
+        }
+        .luck {
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+    }
+  }
+    .reverseContainer {
+      flex-direction: row-reverse;
+    }
+    .normalContainer{ 
+      flex-direction: row;
+    }
+  .sideBySideContainer {
+    border-radius: 40px;
+    overflow: hidden;
+    background: #02080F;
+    color: white;
+    margin-bottom: 7rem;
+    display: flex;
+    align-items: stretch;
+    @media (max-width: 800px) {
+    border-radius: 0px;
+    margin-bottom: 0rem;
+    flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+    }
+    .left {
+      width: 40%;
+      min-height: 100%;
+      @media (max-width: 800px) {
+        width: 100%;
+       }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      flex: 1;
+      padding: 3rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media (max-width: 800px) {
+        padding: 1rem;
+      }
+      .rightContent {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        @media (max-width: 800px) {
+          gap: 0.5rem;
+          img {
+            width: 3rem;
+          }
+
+        }
+        .mainTitle {
+          color: #FFF;
+          font-size: 5rem;
+          font-style: italic;
+          font-weight: 900;
+          line-height: normal;
+          line-height: 130%;
+          text-align: left;
+          text-transform: uppercase;
+          @media (max-width: 800px) {
+            font-size: 2rem;
+            line-height: 120%;
+          }
+        }
+      }
+
+      .description {
+        margin-top: 2rem;
+        color: #FFF;
+        font-size: 1.667rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 3.2rem;
+        @media (max-width: 800px) {
+          font-size: 1rem;
+        line-height: 1.6rem;
+      }
+        /* 191.73% */
+      }
+    }
+
+  }
+
+}

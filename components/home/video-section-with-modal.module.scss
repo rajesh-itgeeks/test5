@@ -1,0 +1,248 @@
+section.videoSectionWithModal {
+  position: relative;
+
+  .mouseHoverBoundary {
+    @include absolute(0, 0, 0, 0);
+    margin: auto;
+    z-index: 1;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    // background-color: red;
+
+    @media (min-width: $md) {
+      width: calc(100% - #{$gutter-d-md});
+      height: calc(100% - #{$gutter-d-md});
+    }
+  }
+  
+
+  > .container {
+    position: relative;
+
+    @media (min-width: $t) {
+    }
+    @media (min-width: $md) {
+    }
+
+    .previewWrap {
+      overflow: hidden;
+
+      .previewVideo {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        aspect-ratio: 16 / 9; /* Assuming 16:9 aspect ratio */
+      }
+      
+      @media (min-width: $t) {
+        .previewVideo {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      .playBtn {
+        position: relative;
+        z-index: 2;
+        padding: 0;
+        outline: 0;
+        border: none;
+        background-color: $white;
+        mix-blend-mode: difference;
+        cursor: pointer;
+        position: relative;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: 0;
+        bottom: 0;
+        transform: translate(calc(-50% - 3.5vw), calc(-50% - 3.5vw));
+        margin: 0;
+        display: block;
+        height: 8rem;
+        width: 8rem;
+
+        @media (min-width: $md) {
+          transform: translate(calc(-50% - 3.5vw), calc(-50% - 3.5vw));
+          height: $gutter-d-md;
+          width: $gutter-d-md;
+        }
+
+        &:hover {
+          .playArrow {
+            transform: translateY(-50%) scale(1.15);
+          }
+
+          .spinny {
+            svg {
+              //animation: 10s rotating linear infinite;
+              transform: rotate(360deg);
+              transition: 5s linear;
+            }
+          }
+        }
+
+        .playArrow {
+          z-index: 3;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transform: translateY(-50%) scale(1);
+          margin: 0 auto;
+          display: block;
+          height: 15%;
+          width: 15%;
+          transition: $tr-fast;
+          pointer-events: none;
+
+          svg {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            transform: translateX(15%);
+          }
+        }
+
+        // Infinite Rotate w/ TranslateY
+        @keyframes rotatingWithTranslateY {
+          from {
+            transform: translateY(-50%) rotate(0deg);
+          }
+          to {
+            transform: translateY(-50%) rotate(360deg);
+          }
+        }
+
+        // Infinite Rotate Regular
+        @keyframes rotating {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .spinny {
+          z-index: 2;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transform: translateY(-50%) rotate(0deg);
+          margin: 0 auto;
+          display: block;
+          height: 80%;
+          width: 80%;
+          animation: 30s rotatingWithTranslateY linear infinite;
+          pointer-events: none;
+
+          svg {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            transition: 1.2s linear;
+          }
+        }
+      }
+    }
+  }
+
+  aside.fullVideo {
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: none;
+    pointer-events: none;
+    visibility: hidden;
+
+    &.active {
+      bottom: 0;
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transition: $tr-med;
+    }
+
+    .outsideTheVideo {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .iframeContain {
+      position: relative;
+      width: 85%;
+      height: 100%;
+      max-height: 40vh;
+      display: block;
+      margin: 0 auto;
+
+      @media (min-width: $t) {
+        max-height: 85vh;
+      }
+    }
+
+    .closeBtn {
+      position: absolute;
+      height: 2rem;
+      width: 2rem;
+      top: -3rem;
+      right: -0.75rem;
+      bottom: 0;
+      left: auto;
+      z-index: 3;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      @media (min-width: $t) {
+        top: -3rem;
+        right: -3rem;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+
+    iframe,
+    video {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+:global(body.modal-open) {
+  section.videoSectionWithModal {
+    z-index: 99999;
+  }
+}

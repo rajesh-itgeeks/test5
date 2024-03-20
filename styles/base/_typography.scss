@@ -1,0 +1,794 @@
+//@import 'font-imports';
+
+body,
+html {
+  font-size: #{$bpx}px;
+  font-family: $font-body;
+  font-weight: 400;
+  font-style: normal;
+  color: $black;
+
+  @media (min-width: $t) {
+    font-size: 0.95vw;
+  }
+
+  @media (min-width: $md) {
+    font-size: 0.95vw;
+  }
+
+  @media (min-width: $laptop) {
+    font-size: 0.8vw;
+  }
+
+  @media (min-width: $dt) {
+    font-size: 0.8vw;
+  }
+
+  @media (min-width: $dt-xxl) {
+    font-size: 0.8vw;
+  }
+}
+
+body,
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: $pink;
+  color: $white;
+}
+
+::-moz-selection {
+  background-color: $pink;
+  color: $white;
+}
+
+%header {
+  text-transform: uppercase;
+  font-family: $font-header;
+  font-weight: 700;
+  font-style: normal;
+  font-style: italic;
+}
+
+%body {
+  font-family: $font-body;
+  font-weight: 400;
+  font-style: normal;
+}
+
+strong {
+  //font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+%h1-display,
+.h1-display {
+  text-transform: uppercase;
+  @include fonttype(67.2, 67.2, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(200, 170, 0);
+  }
+
+  em {
+    @extend %header;
+  }
+}
+
+%h1,
+h1,
+.h1 {
+  text-transform: uppercase;
+  @include fonttype(87, 87, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(200, 170, 0);
+  }
+
+  em {
+    @extend %header;
+  }
+
+  &-alt {
+    @include fonttype(48, 58, 0);
+
+    @media (min-width: $t) {
+      @include fonttype(200, 170, 0);
+    }
+  }
+}
+
+%h2,
+h2,
+.h2 {
+  text-transform: uppercase;
+  @include fonttype(63.52, 70, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(150, 160, 0);
+  }
+
+  &-alt,
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%h3,
+h3,
+.h3 {
+  text-transform: uppercase;
+  @include fonttype(25, 40, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(50, 70, 0);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%h4,
+h4,
+.h4 {
+  text-transform: uppercase;
+  @include fonttype(17, 17, 0.01);
+
+  @media (min-width: $t) {
+    @include fonttype(50, 65, 0.01);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%h5,
+h5,
+.h5 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  @include fonttype(29, 23, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(38, 32, 0.01);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%h6,
+h6,
+.h6 {
+  text-transform: uppercase;
+  @include fonttype(37, 40, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(65, 83, 0);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%leadin,
+.leadin {
+  font-family: $font-header;
+  font-weight: 500;
+  text-transform: uppercase;
+  @include fonttype(12, 14, 4);
+
+  @media (min-width: $md) {
+    @include fonttype(20, 24, 8);
+  }
+}
+
+%ingredientNo,
+.ingredientNo {
+  font-family: $font-header;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-style: italic;
+  @include fonttype(100, 100, 4);
+
+  @media (max-width: 800px) {
+    @include fonttype(48, 48, 8);
+  }
+
+  @media (min-width: $md) {
+    @include fonttype(100, 100, 8);
+  }
+}
+
+%productText,
+.productText {
+  font-family: $font-header;
+  font-weight: 400;
+  text-transform: uppercase;
+  @include fonttype(100, 100, 4);
+
+  @media (min-width: $md) {
+    @include fonttype(100, 100, 4);
+  }
+}
+
+%productTitle,
+.productTitle {
+  font-family: $font-header;
+  font-weight: 300;
+  text-transform: uppercase;
+  @include fonttype(32, 10, 4);
+
+  @media (min-width: $md) {
+    @include fonttype(32, 10, 4);
+  }
+}
+
+%bannerText,
+.bannerText {
+  font-weight: 700;
+  text-transform: normal;
+  font-style: italic;
+  @include fonttype(60, 60, 2);
+
+  @media (min-width: $md) {
+    @include fonttype(60, 60, 2);
+  }
+}
+
+%bannerText2,
+.bannerText2 {
+  font-weight: 500;
+  text-transform: normal;
+  font-style: italic;
+  @include fonttype(24, 20, 1);
+
+  @media (max-width: 800px) {
+    @include fonttype(24, 30, 1);
+  }
+
+  @media (min-width: $md) {
+    @include fonttype(24, 20, 1);
+  }
+}
+
+%ingredientText,
+.ingredientText {
+  font-family: $font-header;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  @include fonttype(20, 0, 1);
+
+  @media (max-width: 800px) {
+    @include fonttype(12, 0, 1);
+  }
+
+  @media (min-width: $md) {
+    @include fonttype(20, 0, 1);
+  }
+}
+
+%faqHeaderText,
+.faqHeaderText {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.32;
+  // text-transform: uppercase;
+  @include fonttype(37, 3, 1);
+
+  @media (min-width: $md) {
+    @include fonttype(37, 3, 1);
+  }
+  @media (max-width: 1000px) and (min-width: 500px) {
+  font-size: 40px;
+}
+}
+
+%faqQuestion,
+.faqQuestion {
+  font-family: Inter;
+  font-weight: 500;
+  text-transform: normal;
+  display: flex !important;
+  vertical-align: bottom !important;
+  @include fonttype(24, 3, 1);
+
+  @media (max-width: 1000px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: $md) {
+    @include fonttype(24, 3, 1);
+  }
+}
+
+%faqTitle,
+.faqTitle {
+  font-family: Inter;
+  font-weight: 700;
+  text-transform: normal;
+  @include fonttype(32, 3, 1);
+	@media (min-width: 500px) and (max-width: 1000px) {
+    font-size: 24px;
+  }
+  @media (min-width: $md) {
+    @include fonttype(32, 3, 1);
+    margin-bottom: 1rem;
+  }
+}
+
+%inter-n-22-600,
+.inter-n-22-600 {
+  font-weight: 600;
+  text-transform: normal;
+  @include fonttype(22, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(22, normal, 1);
+  }
+}
+
+%inter-n-24-400,
+.inter-n-24-400 {
+  font-weight: 400;
+  text-transform: normal;
+  @include fonttype(24, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(24, normal, 1);
+  }
+}
+
+%inter-n-18-600,
+.inter-n-18-600 {
+  font-weight: 600;
+  text-transform: normal;
+  @include fonttype(18, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(18, normal 1);
+  }
+}
+
+%inter-n-18-500,
+.inter-n-18-500 {
+  font-weight: 500;
+  text-transform: normal;
+  @include fonttype(18, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(18, normal, 1);
+  }
+}
+
+%inter-n-17-400,
+.inter-n-17-400 {
+  font-weight: 400;
+  text-transform: normal;
+  @include fonttype(17, 27.204, 1);
+
+  @media (min-width) {
+    @include fonttype(17, 27.204, 1);
+  }
+}
+
+%inter-n-16-400,
+.inter-n-16-400 {
+  font-weight: 400;
+  text-transform: normal;
+  @include fonttype(16, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(16, normal, 1);
+  }
+}
+
+%inter-n-15-400,
+.inter-n-15-400 {
+  font-weight: 400;
+  text-transform: normal;
+  @include fonttype(15, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(15, normal, 1);
+  }
+}
+
+%inter-n-14-400,
+.inter-n-14-400 {
+  font-weight: 400;
+  text-transform: normal;
+  @include fonttype(14, normal, 1);
+
+  @media (min-width) {
+    @include fonttype(14, normal, 1);
+  }
+}
+
+%leadin-alt,
+.leadin-alt {
+  font-family: $font-header;
+  font-weight: 500;
+  text-transform: uppercase;
+  @include fonttype(20, 36, 7);
+
+  @media (min-width: $t) {
+    @include fonttype(23, 40, 8);
+  }
+}
+
+%p,
+p {
+  font-family: $font-body;
+  @include fonttype(16, 28, 0.01);
+
+  @media (min-width: $t) {
+    @include fonttype(22, 30, 0.01);
+  }
+}
+
+%p-alt,
+.p-alt {
+  font-family: $font-body;
+  @include fonttype(18, 34, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(23, 40, 0);
+  }
+}
+
+%large,
+.large {
+  font-family: $font-body;
+  @include fonttype(16, 21, 0.2);
+
+  @media (min-width: $t) {
+    @include fonttype(32, 48, 0);
+  }
+}
+
+%product-details,
+.product-details {
+  font-family: $font-body;
+  font-weight: 400;
+  @include fonttype(20, 27, 0.01);
+}
+
+%small,
+.small {
+  font-family: $font-body;
+  @include fonttype(16, 25, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(20, 30, 0);
+  }
+}
+
+%nav-type,
+.nav-type {
+  font-weight: 500;
+  text-transform: uppercase;
+  @include fonttype(37, 40, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(16, 20, 3);
+  }
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
+}
+
+%nav-marquee-type,
+.nav-marquee-type {
+  text-transform: uppercase;
+  font-weight: 500;
+  @include fonttype(10.4, 13, 3);
+
+  @media (min-width: $t) {
+    @include fonttype(16, 20, 3);
+  }
+}
+
+%footer-links,
+.footer-links {
+  text-transform: uppercase;
+  @include fonttype(25, 25, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(45, 45, 0);
+  }
+}
+
+%footer-type,
+.footer-type {
+  @include fonttype(12, 18, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(15, 25, 0);
+  }
+}
+
+%footer-detail,
+.footer-detail {
+  text-transform: uppercase;
+  @include fonttype(12, 12, 0);
+
+  @media (min-width: $md) {
+    @include fonttype(15, 15, 0);
+  }
+}
+
+%small-detail,
+.small-detail {
+  text-transform: uppercase;
+  @include fonttype(12, 12, 0);
+
+  @media (min-width: $md) {
+    @include fonttype(12, 12, 0);
+  }
+}
+
+%btn-type,
+.btn-type {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: Poppins !important;
+  @include fonttype(20, 15, 3);
+
+  @media (max-width: 800px) {
+    @include fonttype(12, 15, 3);
+  }
+}
+
+%outline-text,
+.outline-text {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  @include fonttype(60, 60, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(130, 130, 0);
+  }
+}
+
+%large-display,
+.large-display {
+  text-transform: uppercase;
+  font-weight: 400;
+  @include fonttype(60, 60, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(130, 130, 0);
+  }
+}
+
+%stroke-white,
+.stroke-white {
+  color: transparent;
+  -webkit-text-stroke: 1.5px $white;
+  // -webkit-text-fill-color: transparent;
+
+  @media (min-width: $md) {
+    -webkit-text-stroke: 2px $white;
+  }
+}
+
+%stroke-black,
+.stroke-black {
+  color: transparent;
+  -webkit-text-stroke: 1.5px $black;
+  // -webkit-text-fill-color: transparent;
+
+  @media (min-width: $md) {
+    -webkit-text-stroke: 2px $black;
+  }
+}
+
+%product-cost,
+.product-cost {
+  font-weight: 700;
+  font-style: italic;
+  @include fonttype(16, 20, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(20, 20, 0.2);
+  }
+}
+
+%verified-buyer,
+.verified-buyer {
+  font-weight: 400;
+  text-transform: uppercase;
+  @include fonttype(16, 20, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(20, 20, 0.2);
+  }
+}
+
+%scroll-card-title,
+.scroll-card-title {
+  font-weight: 400;
+  @include fonttype(37, 44, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(81, 91, 0);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%value-card-type,
+.value-card-type {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  @include fonttype(29, 33, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(35, 40, 0);
+  }
+}
+
+%value-detail,
+.value-detail {
+  text-transform: uppercase;
+  font-family: $font-body;
+  font-weight: 500;
+  @include fonttype(10, 15, 0.01);
+
+  @media (min-width: $t) {
+    @include fonttype(12, 16, 4);
+  }
+}
+
+%product-title,
+.product-title {
+  font-weight: 900;
+  font-style: italic;
+
+  @include fonttype(60, 73, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(80, 73, 0);
+  }
+}
+
+%product-hero-cost,
+.product-hero-cost {
+  color: #d904a0;
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: $font-body;
+  @include fonttype(29, 33, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(38, 42, 0);
+  }
+}
+
+%product-title-cart,
+.product-title-cart {
+  @include fonttype(24, 28, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(27, 32, 0);
+  }
+
+  em {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+%ingredient-desc,
+.ingredient-desc {
+  font-family: $font-body;
+  @include fonttype(18, 30, 0);
+
+  @media (min-width: $t) {
+    @include fonttype(28, 40, 0);
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 949px) {
+  /* Tablet styles */
+  // .product-title {
+  //   font-size: 40px;
+  // }
+  // .product-single-hero_productHero__MFAAB
+  //   .product-single-hero_container__br711
+  //   .product-single-hero_productInfo__7ICn2
+  //   .product-single-hero_titleContainer__h9ll7 {
+  //   align-items: start !important;
+  // }
+  .product-description {
+    font-size: 20px !important;
+  }
+  .product-hero-single {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .single-product-media {
+    // display: flex !important;
+    // height: 350px !important;
+    // width: 100% !important;
+  }
+  .product-single-filter {
+    font-size: 12px !important;
+  }
+  // .product-hero-cost {
+  //   font-size: 20px !important;
+  // }
+  .product-single-badges {
+    width: 45% !important;
+    margin: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 10px !important;
+  }
+  // .product-info-exit-desc {
+  //   font-size: 15px !important;
+  // }
+  .product-ingredients-media {
+    margin-top: 15px !important;
+  }
+  // .related-product-title {
+  //   font-size: 15px !important;
+  // }
+  // .related-product-cost {
+  //   font-size: 15px !important;
+  // }
+  // .related-product-description {
+  //   font-size: 12px !important;
+  // }
+}
+.product-ingredient-buttons {
+  width: auto !important;
+
+  min-width: fit-content !important;
+}
+.faq-answer {
+  padding-top: 10px;
+  @media (max-width: 1000px) {
+  padding-top: 20px;
+  font-size: 18px;
+  }
+}
+.faq-lowercase {
+  text-transform: none !important;
+}
+.bannerText,
+.faqHeaderText {
+  text-transform: uppercase !important;
+}
+.questions-text {
+  font-weight: 700;
+}

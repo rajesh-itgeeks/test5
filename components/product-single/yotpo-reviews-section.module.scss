@@ -1,0 +1,95 @@
+.YotpoReviews {
+  color: $white;
+
+  .reviewTotal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 2rem;
+
+    .reviewScore {
+      margin: 0 0 1rem;
+    }
+
+    .reviewStars {
+      margin: 0 0 1rem;
+    }
+
+    .reviewBase {
+      p {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .reviewFormContain {
+    margin: 0 0 2rem;
+
+    .leadin {
+      color: $white;
+    }
+  }
+
+  .reviewCardContain {
+    .reviewCard {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 1rem;
+      border-bottom: 1px solid $white;
+      padding: 1rem 1rem 2rem;
+
+      @media (min-width: $t) {
+        flex-direction: row;
+        padding: 3.5rem;
+      }
+
+      &:first-child {
+        border-top: 1px solid $white;
+      }
+
+      .reviewUser {
+        width: 100%;
+        max-width: 100%;
+
+        @media (min-width: $t) {
+          max-width: 40%;
+        }
+
+        .displayName {
+          margin: 0 0 0.5rem;
+        }
+
+        .verifiedBuyer {
+          margin: 0 0 0.5rem;
+        }
+
+        .starsContain {
+          margin: 0 0 1rem;
+        }
+      }
+
+      .reviewBody {
+        width: 100%;
+        max-width: 100%;
+
+        @media (min-width: $t) {
+          max-width: 60%;
+        }
+
+        .readMore {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .loadmoreButton {
+    text-align: center;
+    padding: 2rem 0 0;
+  }
+}

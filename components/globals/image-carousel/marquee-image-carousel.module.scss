@@ -1,0 +1,35 @@
+section.marqueeImageCarousel {
+  padding: $spacing-xl 0;
+  @media (min-width: $md) {
+    padding: $gutter-d-md 0;
+  }
+
+  .imageSlideWrapper {
+    .card {
+      //height: 100%;
+
+      img {
+        position: static !important;
+        width: auto !important;
+        height: 80vw !important;
+
+        @media (min-width: $t) {
+          height: 50vw !important;
+        }
+
+        @media (min-width: $md) {
+          height: 25vw !important; // might need to adjust the height here for quality assurance
+        }
+      }
+    }
+  }
+}
+
+:global(.blog-single) {
+  section.marqueeImageCarousel {
+    padding: $spacing-xs 0;
+    @media (min-width: $md) {
+      padding: $gutter-d-xs 0;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.marqueeHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 2.5rem;
+
+  @media (min-width: $t) {
+    height: 5rem;
+  }
+
+  .track {
+    position: relative;
+    transform: translate3d(0, 0, 0); // Force Hardware Acceleration in WebKit
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    overflow: visible;
+    animation: 60s linear marqueeAnimate infinite;
+
+    &.hoverPause {
+      &:hover {
+        @media (min-width: $md) {
+          animation-play-state: paused;
+        }
+      }
+    }
+
+    .contentHolder {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+
+      &,
+      span {
+        transform: translate3d(0, 0, 0); // Force Hardware Acceleration in WebKit
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+      }
+
+      .contentInner {
+        display: flex;
+        height: 35vw;
+        width: 100%;
+        align-items: center;
+
+        @media (min-width: $t) {
+          height: 11rem;
+          width: 100%;
+        }
+
+        span {
+          color: $white;
+          padding: 0;
+          display: inline-block;
+
+          @media (min-width: $t) {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes marqueeAnimate {
+    0% {
+      transform: translate3d(0%, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+:global(.lightMode) {
+  .marqueeHeader {
+    .track {
+      .contentHolder {
+        .contentInner {
+          span {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

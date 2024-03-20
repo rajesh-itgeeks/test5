@@ -1,0 +1,79 @@
+.productForm {
+  .costContain {
+    margin-top: -1rem;
+  }
+
+  .variantContain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+    @media (max-width: 800px) {
+      flex-wrap: wrap;
+      row-gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    .variantBtn {
+      flex: 1;
+      font-weight: bold;
+  
+    }
+    .atcBtn {
+      flex: 2;
+      color: $black;
+      font-weight: bold;
+      background-color: $white;
+      @media (max-width: 800px) {
+        min-width: 100%;
+      }
+    }
+    .quantityContain {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 50rem;
+      outline: 0;
+      border: 2px solid $white;
+      flex: 1;
+        height: 3rem;
+     
+      input,
+      button {
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        appearance: none;
+        text-align: center;
+        color: $white;
+        font-weight: 500;
+        @include fonttype(16, 12, 0);
+      }
+  
+      input {
+        display: inline-block;
+        background-color: transparent;
+        width: 100%;
+      }
+  
+      button {
+        cursor: pointer;
+        @include fonttype(28, 20, 0);
+        padding: 0;
+        min-width: 1rem;
+        max-height: 1rem;
+    
+      }
+    }
+  }
+
+  .quantityAtcContain {
+    display: flex;
+  }
+
+  .soldOut {
+    padding: 1rem 0;
+    font-weight: bold;
+    color: $white;
+  }
+}

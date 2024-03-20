@@ -1,0 +1,111 @@
+.footerForm {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  margin: 1.75rem 0 0;
+
+  @media (min-width: $md) {
+    align-items: flex-end;
+  }
+
+  > div {
+    width: 100%;
+  }
+
+  label {
+    display: none;
+  }
+
+  input {
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid $white;
+    color: $white;
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0 0 0.25rem;
+    font-family: $font-body;
+    @include fonttype(18, 18, 0);
+
+    @media (min-width: $md) {
+      padding: 1rem 1rem 2rem 1rem;
+    }
+
+    // === Input placeholders
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: $white;
+      font-family: $font-body;
+      @include fonttype(18, 18, 0);
+    }
+
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      color: $white;
+      font-family: $font-body;
+      @include fonttype(18, 18, 0);
+    }
+
+    &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $white;
+      font-family: $font-body;
+      @include fonttype(18, 18, 0);
+    }
+
+    &:focus {
+      // box-shadow: inset 0 -10px 10px -10px $pink;
+      // outline: none;
+      // animation: pulsate 2s infinite ease-in-out;
+    }
+
+    @keyframes pulsate {
+      0% {
+        box-shadow: inset 0 -10px 10px -10px rgba($pink, 0.5);
+      }
+      50% {
+        box-shadow: inset 0 -10px 10px -10px rgba($pink, 1), inset 0 -10px 10px -10px rgba($pink, 1);
+      }
+      100% {
+        box-shadow: inset 0 -10px 10px -10px rgba($pink, 0.5);
+      }
+    }
+  }
+
+  .formBtn {
+    position: relative;
+    margin: 1.5rem 0 0;
+
+    @media (min-width: $md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+    }
+
+    display: inline-flex;
+    appearance: none;
+    outline: 0;
+    padding: 1rem 2.5rem;
+    border: 1px solid $white;
+    width: auto;
+    color: $white;
+    background: transparent;
+
+    span {
+      position: relative;
+    }
+
+    &:hover {
+      border: 1px solid $white !important;
+      color: $black;
+      background: $white;
+    }
+  }
+}

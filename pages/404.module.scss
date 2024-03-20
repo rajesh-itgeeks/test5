@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: $gutter-m-big;
+
+  @media (min-width: $md) {
+    padding: $gutter-d-sm $gutter-d-big;
+  }
+
+  .contentContain {
+    width: 100%;
+    text-align: center;
+
+    h3 {
+      margin: 3rem 0;
+    }
+  }
+}

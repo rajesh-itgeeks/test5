@@ -1,0 +1,104 @@
+form.formMain {
+  position: relative;
+
+  .formGroup {
+    margin: 0 0 $spacing-m 0;
+    @media (min-width: $md) {
+      margin: 0 0 $spacing-big 0;
+    }
+
+    label {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+      clip-path: inset(0px 0px 99.9% 99.9%);
+      overflow: hidden;
+      height: 1px;
+      width: 1px;
+      padding: 0;
+      border: 0;
+    }
+
+    input,
+    select,
+    textarea {
+      background-color: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      outline: 0;
+      border: 0;
+      border: 1px solid $black;
+      color: $black;
+      padding: $spacing-s;
+      width: 100%;
+      font-family: $font-body;
+      @include fonttype(16, 16, 0);
+      margin: 0;
+      transition: $tr-fast;
+
+      &:active,
+      &:focus {
+        background-color: $black;
+        color: $black;
+        &::-webkit-input-placeholder {
+          color: $black;
+        }
+
+        &::-moz-placeholder {
+          color: $black;
+        }
+
+        &:-ms-input-placeholder {
+          color: $black;
+        }
+      }
+
+      @media (min-width: $md) {
+        padding: $spacing-m $spacing-big;
+      }
+
+      // === Input placeholders
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $black;
+        font-family: $font-body;
+        transition: $tr-fast;
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $black;
+        font-family: $font-body;
+        transition: $tr-fast;
+      }
+
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: $black;
+        font-family: $font-body;
+        transition: $tr-fast;
+      }
+    }
+
+    select {
+      background: transparent url('/images/arrow-down-black.svg') right 1rem
+        center no-repeat;
+      cursor: pointer;
+      /*&:focus {
+        background: transparent url("/images/arrow-down.svg") right 1rem center no-repeat;
+      }*/
+    }
+  }
+
+  .formBtn {
+    margin: $spacing-m 0 0 0;
+    @media (min-width: $md) {
+    }
+
+    &:hover {
+      border: 1px solid $black !important;
+    }
+  }
+}

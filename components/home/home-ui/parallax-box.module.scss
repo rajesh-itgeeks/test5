@@ -1,0 +1,37 @@
+.parallaxBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+
+  .bg {
+    object-fit: cover;
+  }
+
+  .innerWrap {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+    margin: 0 auto;
+    height: 80%;
+    width: 80%;
+    overflow: hidden;
+
+    .inner {
+      object-fit: cover;
+      height: 120% !important;
+      pointer-events: none;
+      bottom: auto !important;
+      top: 0% !important;
+    }
+  }
+}
